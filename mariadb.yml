@@ -2,6 +2,6 @@
   hosts: db1.rhpds.opentlc.com
   tasks:
      - name: Install the mariadb rpm
-       yum: name=mariadb-server mariadb       
+       yum: name=mariadb-server       
      - name: start the mariadb service
        service: name=mariadb state=started     
