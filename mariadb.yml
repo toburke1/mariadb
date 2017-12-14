@@ -4,6 +4,11 @@
 
   tasks:
   - name: ensure mariadb is at the latest version
-    yum: name=mariadb state=latest
+    yum: 
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - mariadb-server
+      - mariadb
   - name: ensure that mariadb is started
-    service: name=mariadb state=started
+    service: name=mariadb state=started enabled=yes
