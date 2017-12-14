@@ -1,0 +1,8 @@
+- name: This sets up an mariadb database server
+  hosts: db1.rhpds.opentlc.com
+  tasks:
+     - name: Install the httpd rpm
+       yum: name=mariadb-server
+       yum: name=mariadb
+     - name: start the mariadb service
+       service: name=mariadb state=started     
