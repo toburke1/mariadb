@@ -1,7 +1,6 @@
 - name: This sets up an mariadb database server
   hosts: db1.rhpds.opentlc.com
-  remote_user: root
-  tasks:
+    tasks:
      - name: Install the mariadb rpm
        yum: name=mariadb-server       
      - name: start the mariadb service
