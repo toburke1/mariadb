@@ -1,7 +1,16 @@
 - name: This sets up an mariadb database server
   hosts: db1.rhpds.opentlc.com
+  become: true
     tasks:
-     - name: Install the mariadb rpm
-       yum: name=mariadb-server       
-     - name: start the mariadb service
-       service: name=mariadb state=started     
+     - name: Install the mariadb server
+       yum: 
+         name:mariadb-server
+         state: present
+     - name: Install mariadb
+       yum: 
+         name: mariadb
+         state: present
+     - name: start mariadb
+       service:
+         name: mariadb
+         state: started
