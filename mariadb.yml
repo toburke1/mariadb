@@ -1,5 +1,5 @@
 ---
-- hosts: db1.rhpds.opentlc.com
+- hosts: dbservers
   remote_user: root
 
   tasks:
